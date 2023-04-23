@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import SoundChip from './modules/msxsound/SoundChip';
-import VoiceType from './modules/msxsound/VoiceType';
+import SoundChip from './models/msxsound/SoundChip';
+import VoiceType from './models/msxsound/VoiceType';
 
 @Component({
   selector: 'app-root',
