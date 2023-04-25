@@ -20,26 +20,32 @@ export enum MusicalNoteFrecuency {
    Re1 = 36.71,   // D
    Re2 = 73.42,
    Re3 = 146.83,
+   Re4 = 293.66,
 
    Mi1 = 41.20,
    Mi2 = 82.41,
    Mi3 = 164.81,
+   Mi4 = 329.63,
 
    Fa1 = 43.65,
    Fa2 = 87.31,
    Fa3 = 174.61,
+   Fa4 = 349.23,
 
    Sol1 = 49,
    Sol2 = 98,
    Sol3 = 196,
+   Sol4 = 392,
 
    La1 = 55,
    La2 = 110,
    La3 = 220,
+   La4 = 440,
 
    Si1 = 61.74,
    Si2 = 123.47,
-   Si3 = 246.94
+   Si3 = 246.94,
+   Si4 = 493.88
 }
 
 export default MusicalNoteFrecuency;

@@ -38,7 +38,14 @@ export class MainComponent implements OnInit {
         MusicalNoteFrecuency.Sol3, 0.5,
         MusicalNoteFrecuency.La3, 0.5,
         MusicalNoteFrecuency.Si3, 0.5,
-        MusicalNoteFrecuency.Do4, 0.5
+        MusicalNoteFrecuency.Do4, 0.5,
+        MusicalNoteFrecuency.Re4, 0.5,
+        MusicalNoteFrecuency.Mi4, 0.5,
+        MusicalNoteFrecuency.Fa4, 0.5,
+        MusicalNoteFrecuency.Sol4, 0.5,
+        MusicalNoteFrecuency.La4, 0.5,
+        MusicalNoteFrecuency.Si4, 0.5,
+        MusicalNoteFrecuency.Do5, 1
       ];
 
       sound.setVoiceFrequencies(1, voz1);
