@@ -6,6 +6,7 @@ import { NotesRepositoryComponent } from './components/notes-repository/notes-re
 import { MelodyControlComponent } from './components/melody-control/melody-control.component';
 import { AssemblerCodeComponent } from './components/assembler-code/assembler-code.component';
 import { MainComponent } from './components/main/main.component';
+import { OctaveComponent } from './components/octave/octave.component';
 
 
 @NgModule({
@@ -13,7 +14,8 @@ import { MainComponent } from './components/main/main.component';
     NotesRepositoryComponent,
     MelodyControlComponent,
     AssemblerCodeComponent,
-    MainComponent
+    MainComponent,
+    OctaveComponent
   ],
   imports: [
     CommonModule,
