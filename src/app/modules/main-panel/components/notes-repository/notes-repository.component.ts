@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import octaves from 'src/app/models/msxsound/octaves';
+import Octaves from 'src/app/models/msxsound/Octaves';
 
 @Component({
   selector: 'app-notes-repository',
@@ -9,11 +9,10 @@ import octaves from 'src/app/models/msxsound/octaves';
 export class NotesRepositoryComponent implements OnInit {
 
   public numOctaves: number = 8;
-  public octaves: object[];
+  public octaves: any[] = Octaves.octaves;
 
   constructor() {
-     this.octaves = octaves;
-     console.log(this.octaves.length);
+    console.log(this.octaves.length);
   }
 
 

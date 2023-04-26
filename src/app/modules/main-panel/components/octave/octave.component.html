@@ -1,1 +1,14 @@
-<p>octave works!</p>
+<div class="d-flex flex-column">
+  <div class="row">
+    <div class="col">
+      <div *ngFor="let noteName of this.notesName">
+         <span> {{ noteName }} &nbsp; </span>
+      </div>
+    </div>
+    <div class="col">
+      <div *ngFor="let noteFrequency of this.notesFrequencies">
+        <span>{{ noteFrequency }}</span>
+      </div>
+    </div>
+  </div>
+</div>

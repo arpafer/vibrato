@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import MusicalNoteFrecuency from 'src/app/models/msxsound/MusicalNoteFrecuency';
 import SoundChip from 'src/app/models/msxsound/SoundChip';
 import VoiceType from 'src/app/models/msxsound/VoiceType';
-import octaves from 'src/app/models/msxsound/octaves';
 
 @Component({
   selector: 'app-main',
@@ -14,7 +13,7 @@ export class MainComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    console.log(octaves);
+
     let sound = new SoundChip();
 
     const voz1 =
