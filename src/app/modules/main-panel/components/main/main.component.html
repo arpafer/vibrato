@@ -1,15 +1,18 @@
 <nav class="navbar" style="background-color: #002a88; color: #ffffff">
   <div class="container-fluid">
-    <span class="navbar-brand mb-0 h1" style="color: white">VIBRATO</span>
+    <span class="navbar-brand mb-0" style="color: white"><div class="d-flex d-flex-inline"><h1>M</h1><h4>IBRATO</h4></div></span>
   </div>
 </nav>
 <hr>
-<div class="d-flex justify-content-around">
+<div class="row">
+  <div class="col-2 text-center">
     <app-notes-repository></app-notes-repository>
-</div>
-<div class="d-flex justify-content-around">
+  </div>
+  <div class="col-8">
     <app-melody-control></app-melody-control>
-
+  </div>
+  <div class="col-2">
     <app-assembler-code></app-assembler-code>
+  </div>
 
 </div>

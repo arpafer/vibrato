@@ -1,9 +1,10 @@
-<p>NOTAS Y ACORDES</p>
-<div class="d-flex justify-content-between flex-wrap">
-  <div *ngFor="let octave of this.octaves; let i = index">
-    <a class="btn btn-primary" data-bs-toggle="collapse" href="#info-octave-{{i + 1}}" role="button"
+<h6><b>NOTAS Y ACORDES</b></h6>
+<br>
+<div class="d-flex flex-column flex-wrap">
+  <div *ngFor="let octave of this.octaves; let i = index" class="separacion-octavas">
+    <a class="btn btn-primary color-octava"  data-bs-toggle="collapse" href="#info-octave-{{i + 1}}" role="button"
       aria-expanded="false" aria-controls="info-octave">
-      <h5>Octava {{i + 1}}</h5>
+      <h6>Oc. {{i + 1}}</h6>
     </a>
 
     <div class="collapse" id="info-octave-{{i + 1}}">
@@ -11,6 +12,6 @@
         <app-octave [octaveIndex]="i + 1"></app-octave>
       </div>
     </div>
-    <br>
+
   </div>
 </div>

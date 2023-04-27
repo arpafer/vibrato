@@ -1,0 +1,10 @@
+<button type="button" class="btn btn-primary position-relative {{this.color}}"
+  [ngStyle]="{'max-width': btnWidth, 'min-width': btnWidth}" (click)="clickNote()">
+  <b><span [ngStyle]="{'font-size': fontSize}">{{ noteName }}</span></b>
+  <span class="position-absolute top-0 start-50 translate-middle badge rounded-pill bg-danger">
+    <small>{{ this.noteFrequency }}</small>
+  </span>
+</button>
+<div *ngIf="this.timeButton">
+
+</div>

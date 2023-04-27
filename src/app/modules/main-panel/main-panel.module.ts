@@ -7,6 +7,8 @@ import { MelodyControlComponent } from './components/melody-control/melody-contr
 import { AssemblerCodeComponent } from './components/assembler-code/assembler-code.component';
 import { MainComponent } from './components/main/main.component';
 import { OctaveComponent } from './components/octave/octave.component';
+import { VoiceComponent } from './components/voice/voice.component';
+import { MusicalNoteComponent } from './components/musical-note/musical-note.component';
 
 
 @NgModule({
@@ -15,7 +17,9 @@ import { OctaveComponent } from './components/octave/octave.component';
     MelodyControlComponent,
     AssemblerCodeComponent,
     MainComponent,
-    OctaveComponent
+    OctaveComponent,
+    VoiceComponent,
+    MusicalNoteComponent
   ],
   imports: [
     CommonModule,
