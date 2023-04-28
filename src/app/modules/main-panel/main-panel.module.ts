@@ -9,6 +9,7 @@ import { MainComponent } from './components/main/main.component';
 import { OctaveComponent } from './components/octave/octave.component';
 import { VoiceComponent } from './components/voice/voice.component';
 import { MusicalNoteComponent } from './components/musical-note/musical-note.component';
+import { MusicalNoteInVoiceComponent } from './components/musical-note-in-voice/musical-note-in-voice.component';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { MusicalNoteComponent } from './components/musical-note/musical-note.com
     MainComponent,
     OctaveComponent,
     VoiceComponent,
-    MusicalNoteComponent
+    MusicalNoteComponent,
+    MusicalNoteInVoiceComponent
   ],
   imports: [
     CommonModule,

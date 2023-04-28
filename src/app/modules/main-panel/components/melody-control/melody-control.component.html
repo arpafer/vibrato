@@ -1,13 +1,22 @@
+<div class="d-flex justify-content-center">
 <h6><b>CONTROL DE LA MELODÍA</b></h6>
+</div>
 <br>
 
-<div class="separacion-panel-voces">
+<div class="d-flex justify-content-around">
+  <i class="bi-play-circle pointer" style="font-size: 2rem; color: green"></i>
+  <i class="bi-pause-circle pointer" style="font-size: 2rem; color: black"></i>
+  <i class="bi-stop-circle pointer" style="font-size: 2rem; color: red"></i>
+</div>
 
-  <app-voice voz="1"></app-voice>
+
+<div class="border-control-melodia separacion-panel-voces">
+
+  <app-voice voice="1" [activated]=true [noteAdded]="this.note"></app-voice>
   <br><br>
-  <app-voice voz="2"></app-voice>
+  <app-voice voice="2" [noteAdded]="this.note"></app-voice>
   <br><br>
 
-  <app-voice voz="3"></app-voice>
+  <app-voice voice="3" [noteAdded]="this.note"></app-voice>
 
 </div>

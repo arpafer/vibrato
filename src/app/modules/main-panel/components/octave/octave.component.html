@@ -1,6 +1,6 @@
 <div class="d-flex flex-column">
       <div class="separacion-notas" *ngFor="let noteName of this.notesName; let i = index">
-        <app-musical-note [noteName]="noteName" [noteFrequency]="this.notesFrequencies[i]" color="color-{{noteName}}" [width]=47 (selectedNote)="eventSelectedNote($event, i)" ></app-musical-note>
+        <app-musical-note [noteName]="noteName" [noteFrequency]="this.notesFrequencies[i]" color="color-{{noteName}}" [width]=47 (selectedNote)="eventSelectedNote($event)" ></app-musical-note>
       <!--  <button type="button" class="btn btn-primary position-relative color-{{noteName}} width-note">
           <b><small>{{ noteName }}</small></b>
           <span class="position-absolute top-0 start-50 translate-middle badge rounded-pill bg-danger">

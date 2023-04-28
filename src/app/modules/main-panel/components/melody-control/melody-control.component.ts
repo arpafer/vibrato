@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { NoteService } from '../../services/note.service';
+import { Observable } from 'rxjs';
+import Note from 'src/app/models/Dtos/note';
 
 @Component({
   selector: 'app-melody-control',
@@ -7,9 +10,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MelodyControlComponent implements OnInit {
 
-  constructor() { }
+  private noteObservable$ = new Observable<Note>();
+  public note: Note = { name: "", octave: 0};
+
+  constructor(private noteService: NoteService) { }
 
   ngOnInit(): void {
+      this.noteObservable$ = this.noteService.getNoteObserver();
+      this.observerSelectedNote();
   }
 
+  observerSelectedNote() {
+    this.noteObservable$.subscribe(
+      (note: Note) => {
+        this.note = note;
+        console.log("Melody control --> octava " + note.octave + " - nota " + note.name);
+      }
+    )
+  }
 }

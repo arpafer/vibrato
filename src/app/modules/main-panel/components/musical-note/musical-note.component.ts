@@ -13,7 +13,7 @@ export class MusicalNoteComponent implements OnInit {
   @Input() width: number = 47;
   @Input() fontSize: string = "small";
   @Input() resaltado: boolean = false;
-  @Input() timeButton: boolean = false;
+  @Input() disabledClick: boolean = false;
   @Output() selectedNote = new EventEmitter<string>();
 
   btnWidth: string = "";
@@ -32,7 +32,6 @@ export class MusicalNoteComponent implements OnInit {
   }
 
   clickNote() {
-    console.log("Se pinchado en la nota " + this.noteName + " (" + this.noteFrequency + ")");
     this.selectedNote.emit(this.noteName);
   }
 }
