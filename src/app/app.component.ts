@@ -43,7 +43,7 @@ export class AppComponent implements OnInit {
       sound.setVoiceType(3, VoiceType.TRIANGLE);
       sound.setVoiceFrequencies(3, voice3);
       
-    sound.play();
+   // sound.play();
   }
   
 }
