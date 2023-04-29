@@ -24,7 +24,7 @@ export class MelodyControlComponent implements OnInit {
     this.noteObservable$.subscribe(
       (note: Note) => {
         this.note = note;
-        console.log("Melody control --> octava " + note.octave + " - nota " + note.name);
+        // console.log("Melody control --> octava " + note.octave + " - nota " + note.name);
       }
     )
   }

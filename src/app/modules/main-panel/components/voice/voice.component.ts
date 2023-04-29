@@ -20,7 +20,7 @@ export class VoiceComponent implements OnInit, OnChanges {
   private notes$ = new Observable<NotesInVoice>();
   public notes: Note[] = [];
   public frequencies: number[] = [];
- 
+
   constructor(private voiceService: VoiceService) { }
 
   ngOnInit(): void {
@@ -37,9 +37,9 @@ export class VoiceComponent implements OnInit, OnChanges {
            _notes.notes.forEach(
             (note) => {
               this.notes.push(note);
-              this.getInfoNoteAdded();
             }
-           )
+           );
+           this.getInfoNoteAdded();
          }
       }
     )
@@ -49,8 +49,8 @@ export class VoiceComponent implements OnInit, OnChanges {
     let octave = Octaves.octaves[this.noteAdded.octave - 1];
     let i = 0;
     for (let notaName of octave.notas.arrayNotes.keys()) {
-      this.frequencies.push(octave.notas.arrayNotes.get(notaName) as number);
-      i++;
+
+            this.frequencies.push(octave.notas.arrayNotes.get(notaName) as number);
     }
   }
 
@@ -64,6 +64,6 @@ export class VoiceComponent implements OnInit, OnChanges {
 
   toggleCheck() {
     this.activated = !this.activated;
-    console.log("Voz " + this.voice + ": " + this.activated);
+    // console.log("Voz " + this.voice + ": " + this.activated);
   }
 }

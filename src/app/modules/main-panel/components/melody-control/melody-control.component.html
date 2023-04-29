@@ -1,5 +1,5 @@
 <div class="d-flex justify-content-center">
-<h6><b>CONTROL DE LA MELODÍA</b></h6>
+  <h6><b>CONTROL DE LA MELODÍA</b></h6>
 </div>
 <br>
 
@@ -11,12 +11,21 @@
 
 
 <div class="border-control-melodia separacion-panel-voces">
-
-  <app-voice voice="1" [activated]=true [noteAdded]="this.note"></app-voice>
-  <br><br>
-  <app-voice voice="2" [noteAdded]="this.note"></app-voice>
-  <br><br>
-
-  <app-voice voice="3" [noteAdded]="this.note"></app-voice>
-
+  <div class="row">
+    <div class="col">
+      <app-voice voice="1" [activated]=true [noteAdded]="this.note"></app-voice>
+    </div>
+  </div>
+  <br>
+  <div class="row">
+    <div class="col">
+      <app-voice voice="2" [noteAdded]="this.note"></app-voice>
+    </div>
+  </div>
+  <br>
+  <div class="row">
+    <div class="col">
+      <app-voice voice="3" [noteAdded]="this.note"></app-voice>
+    </div>
+  </div>
 </div>

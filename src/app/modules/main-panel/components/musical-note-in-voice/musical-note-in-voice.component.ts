@@ -19,7 +19,7 @@ export class MusicalNoteInVoiceComponent implements OnInit {
 
   btnWidth: string = "";
   private minWidth:number = 47;
-  public minTime: number = 0.1;
+  public minTime: number = 0.5;
 
   constructor() { }
 
