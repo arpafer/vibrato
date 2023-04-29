@@ -1,6 +1,6 @@
 <div class="row">
   <div class="col-3">
-    <h6><b>Voz {{voice}}</b></h6>
+    <h6><b>Canal de Voz {{voice}}</b></h6>
   </div>
   <div class="col-3">
     <i class="bi-play-circle pointer" style="font-size: 1.4rem; color: green"></i>
@@ -13,16 +13,19 @@
   </div>
 </div>
 
-<div class="d-flex-inline flex-column">
-  <input type="checkbox" class="size-checkbox" [checked]="this.activated" (click)="toggleCheck()" />
-</div>
-<div class="panel-notas">
-  <div *ngIf="this.notes && this.notes.length > 0">
-    <div class="d-flex">
-      <div *ngFor="let note of this.notes; let i = index" class="sep-notas">
-          <app-musical-note-in-voice [noteName]="note.name" [noteFrequency]="this.frequencies[i]"
-            color="color-{{note.name}}" fontSize="small" [width]=30 [disabledClick]=true>
+<div class="d-flex-inline">
+  <input type="checkbox" class="size-checkbox pointer" [checked]="this.activated" (click)="toggleCheck()" />
+
+  <div class="panel-notas">
+    <div
+      *ngIf="!this.loading && this.notes && this.notes.length > 0 && this.frequencies != null && this.frequencies.length > 0">
+      <div class="d-flex">
+        <div *ngFor="let note of this.notes; let i = index" class="sep-notas">
+          <app-musical-note-in-voice [noteName]="note.name" [noteFrequency]="this.note.frequency"
+            color="color-{{note.name}}" fontSize="small" [width]=30 [disabledClick]="true"
+            (clickedNote)="clickedNote($event)" (erasedNote)="erasedNote($event)" >
           </app-musical-note-in-voice>
+        </div>
       </div>
     </div>
   </div>

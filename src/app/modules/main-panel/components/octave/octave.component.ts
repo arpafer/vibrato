@@ -1,6 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Octave, Octaves } from 'src/app/models/msxsound/Octaves';
-import { NoteService } from '../../services/note.service';
+import { OctaveService } from '../../services/octave.service';
 
 @Component({
   selector: 'app-octave',
@@ -18,7 +18,7 @@ export class OctaveComponent implements OnInit {
     "#FFA500", "#FFD700", "#9ACD32", "#008000", "#1E90FF", "#4B0082", "#DA70D6"
   ];
 
-  constructor(private noteService: NoteService) {
+  constructor(private octaveService: OctaveService) {
      this.octave =  Octaves.octaves[this.octaveIndex - 1];
   }
 
@@ -34,7 +34,8 @@ export class OctaveComponent implements OnInit {
   }
 
   eventSelectedNote(nota: string) {
-     this.noteService.register(this.octaveIndex, nota);
+     let frequency = this.octave.notas.arrayNotes.get(nota) as number
+     this.octaveService.register(this.octaveIndex, nota, frequency);
   }
 
 }

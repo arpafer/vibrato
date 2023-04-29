@@ -1,5 +1,5 @@
 export enum MusicalNoteFrecuency {
-   NONE = 0,
+   NS = 0,
    Do1 = 32.703,  // C
    Do2 = 65.406,
    Do3 = 130.813,

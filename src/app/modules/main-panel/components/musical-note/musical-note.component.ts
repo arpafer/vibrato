@@ -14,17 +14,23 @@ export class MusicalNoteComponent implements OnInit {
   @Input() fontSize: string = "small";
   @Input() resaltado: boolean = false;
   @Input() disabledClick: boolean = false;
-  @Output() selectedNote = new EventEmitter<string>();
+  @Output() clickedNote = new EventEmitter<string>();
 
   btnWidth: string = "";
 
   private minWidth = 47;
   private minTime = 0.1;
+  public pointer = "pointer";
 
   constructor() { }
 
   ngOnInit(): void {
     this.btnWidth = "" + this.width;
+    if (!this.disabledClick) {
+      this.pointer = "pointer";
+    } else {
+      this.pointer = "no-pointer";
+    }
   }
 
   translateSoundTimeToNoteWidth(soundTime: number) {
@@ -32,6 +38,10 @@ export class MusicalNoteComponent implements OnInit {
   }
 
   clickNote() {
-    this.selectedNote.emit(this.noteName);
+    this.clickedNote.emit(this.noteName);
+  }
+
+  playNote() {
+
   }
 }

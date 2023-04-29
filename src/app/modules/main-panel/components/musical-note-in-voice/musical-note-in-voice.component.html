@@ -1,11 +1,12 @@
-
-  <div class="d-flex flex-column">
-  <app-musical-note [noteName]="this.noteName" [noteFrequency]="this.noteFrequency"
-      color="color-{{this.noteName}}" [fontSize]="this.fontSize" [width]=this.width>
+<div class="d-flex flex-column" *ngIf="this.noteName != null && this.noteName != ''">
+  <i class="bi-x-square text-center pointer" matTooltip="Quitar" (click)="deleteNote()"></i>
+  <br>
+  <app-musical-note [noteName]="this.noteName" [noteFrequency]="this.noteFrequency" color="color-{{this.noteName}}"
+    [fontSize]="this.fontSize" [width]=this.width [disabledClick]="this.disabledClick" (clickedNote)="_clickedNote()">
   </app-musical-note>
   <div class="d-flex">
-    <i class="bi-file-minus pointer"></i>
+    <i class="bi-file-minus pointer" (click)="clickMinusTime()" matTooltip="Disminuye el tiempo"></i>
     <small class="size-seconds">{{this.minTime}}</small>
-    <i class="bi-file-plus pointer"></i>
+    <i class="bi-file-plus pointer" (click)="clickPlusTime()" matTooltip="Aumenta el tiempo" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="Aumenta el volumen"></i>
   </div>
 </div>

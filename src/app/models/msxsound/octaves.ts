@@ -5,13 +5,13 @@ export class NotasOctave {
 
   constructor() {
     this.arrayNotes = new Map<string, number>();
-    this.arrayNotes.set("Do", 0);
+   /* this.arrayNotes.set("Do", 0);
     this.arrayNotes.set("Re", 0);
     this.arrayNotes.set("Mi", 0);
     this.arrayNotes.set("Fa", 0);
     this.arrayNotes.set("Sol", 0);
     this.arrayNotes.set("La", 0);
-    this.arrayNotes.set("Si", 0);
+    this.arrayNotes.set("Si", 0); */
   }
 }
 

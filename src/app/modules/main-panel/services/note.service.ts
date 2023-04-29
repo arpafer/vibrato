@@ -1,22 +1,19 @@
 import { Injectable } from '@angular/core';
-import Note from '../../../models/Dtos/note';
-import { Subject, Observable } from 'rxjs';
-
+import NotePlay from 'src/app/models/Dtos/note-play';
+import SoundChip from 'src/app/models/msxsound/SoundChip';
 
 @Injectable({
   providedIn: 'root'
 })
 export class NoteService {
 
-  private noteObserver$ = new Subject<Note>();
-
   constructor() { }
 
-  getNoteObserver(): Observable<Note> {
-     return this.noteObserver$.asObservable();
-  }
+  play(voice: number, note: NotePlay): void {
 
-  register(octaveIndex: number, nota: string) {
-      this.noteObserver$.next({name: nota, octave: octaveIndex});
+    console.log(note);
+    let sound = new SoundChip();
+    sound.setVoiceFrequencies(voice, [note.frequency, note.time]);
+    sound.play();
   }
 }

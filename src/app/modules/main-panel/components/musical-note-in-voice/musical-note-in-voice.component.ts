@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import NotePlay from 'src/app/models/Dtos/note-play';
 
 @Component({
   selector: 'app-musical-note-in-voice',
@@ -15,11 +16,13 @@ export class MusicalNoteInVoiceComponent implements OnInit {
   @Input() resaltado: boolean = false;
   @Input() timeButton: boolean = false;
   @Input() disabledClick: boolean = false;
-  @Output() selectedNote = new EventEmitter<string>();
+  @Output() clickedNote = new EventEmitter<NotePlay>();
+  @Output() erasedNote = new EventEmitter<NotePlay>();
 
   btnWidth: string = "";
   private minWidth:number = 47;
   public minTime: number = 0.5;
+  public pointer: string = "pointer";
 
   constructor() { }
 
@@ -27,4 +30,25 @@ export class MusicalNoteInVoiceComponent implements OnInit {
     this.btnWidth = "" + this.width;
   }
 
+  clickMinusTime() {
+     if (this.minTime >= 0.1) {
+       this.minTime -= 0.1;
+       this.minTime = Number(this.minTime.toFixed(1));
+     }
+     console.log("Volume: ", this.minTime, " Nota: ", this.noteName, " Frecuencia: " + this.noteFrequency);
+  }
+
+  clickPlusTime() {
+     this.minTime += 0.1;
+     this.minTime = Number(this.minTime.toFixed(2));
+     console.log("Volume: ", this.minTime, " Nota: ", this.noteName, " Frecuencia: ", this.noteFrequency);
+  }
+
+  _clickedNote() {
+     this.clickedNote.emit({noteName: this.noteName, time: this.minTime, frequency: this.noteFrequency});
+  }
+
+  deleteNote() {
+     this.erasedNote.emit({noteName: this.noteName, time: this.minTime, frequency: this.noteFrequency});
+  }
 }
