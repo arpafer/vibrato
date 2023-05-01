@@ -29,12 +29,22 @@ export class VoiceService {
      return this.voice$.asObservable();
   }
 
-  removeNote(noteName: string, voice: number): void {
+  removeNote(note: NotePlay, voice: number, indexPosition: number): void {
     let notesVoice: Note[] = this.mapNotesPerVoice.get(voice)?? [];
     if (notesVoice.length > 0) {
-      let noteIndex: number = MapNotesNameToIndex.get(noteName) as number;
-       notesVoice.splice(noteIndex, 1);
-       this.voice$.next({notes: notesVoice, voice: voice, volume: 0});
+      let encontrado = false;
+      let i = 0;
+      notesVoice.forEach(
+        (_note) => {
+           if (_note.name == note.noteName && _note.frequency == note.frequency && i == indexPosition && !encontrado) {
+            notesVoice.splice(indexPosition, 1);
+            encontrado = true;
+            this.voice$.next({notes: notesVoice, voice: voice, volume: 0});
+           }
+           i++;
+           if (encontrado) return;
+        }
+      );
     }
   }
 

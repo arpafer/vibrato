@@ -66,8 +66,8 @@ export class VoiceComponent implements OnInit, OnChanges {
     this.noteService.play(parseInt(this.voice), note);
   }
 
-  erasedNote(note: NotePlay) {
-    this.voiceService.removeNote(note.noteName, parseInt(this.voice));
+  erasedNote(note: NotePlay, index: number) {
+    this.voiceService.removeNote(note, parseInt(this.voice), index);
     // this.frequencies.splice(MapNotesNameToIndex.)
   }
 

@@ -8,14 +8,14 @@ export enum MusicalNoteFrecuency {
    Do6 = 1046.502,
    Do7 = 2093.005,
    Do8 = 4186.009,
-   Dob1 = 277.18,  // C
-   Dob2 = 554.37,
-   Dob3 = 1108.73,
-   Dob4 = 2217.46,
-   Dob5 = 4434.92,
-   Dob6 = 8869.84,
-   Dob7 = 17739.68,
-   Dob8 = 35479.36,
+   Dos1 = 34.65,  // C
+   Dos2 = 69.30,
+   Dos3 = 138.59,
+   Dos4 = 277.18,
+   Dos5 = 554.37,
+   Dos6 = 1108.73,
+   Dos7 = 2217.46,
+   Dos8 = 4434.92,
 
    // notas de re
    Re1 = 36.71,   // D
@@ -26,6 +26,14 @@ export enum MusicalNoteFrecuency {
    Re6 = 1174.66,
    Re7 = 2349.32,
    Re8 = 4698.63,
+   Res1 = 38.89,
+   Res2 = 77.78,
+   Res3 = 155.56,
+   Res4 = 311.13,
+   Res5 = 622.25,
+   Res6 = 1244.51,
+   Res7 = 2489.02,
+   Res8 = 4978.03,
 
    Mi1 = 41.20,
    Mi2 = 82.41,
@@ -35,6 +43,14 @@ export enum MusicalNoteFrecuency {
    Mi6 = 1318.51,
    Mi7 = 2637.02,
    Mi8 = 5274.04,
+   MiS1 = 46.25,
+   MiS2 = 92.50,
+   MiS3 = 185.00,
+   MiS4 = 370.00,
+   MiS5 = 740.00,
+   MiS6 = 1480.00,
+   MiS7 = 2960.00,
+   MiS8 = 5920.00,
 
    Fa1 = 43.65,
    Fa2 = 87.31,
@@ -44,6 +60,14 @@ export enum MusicalNoteFrecuency {
    Fa6 = 1396.91,
    Fa7 = 2793.83,
    Fa8 = 5587.65,
+   FaS1 = 46.25,
+   FaS2 = 92.50,
+   FaS3 = 185,
+   FaS4 = 369.99,
+   FaS5 = 739.99,
+   FaS6 = 1479.98,
+   FaS7 = 2959.96,
+   FaS8 = 5919.91,
 
    Sol1 = 49,
    Sol2 = 98,
@@ -53,6 +77,14 @@ export enum MusicalNoteFrecuency {
    Sol6 = 1567.98,
    Sol7 = 3135.96,
    Sol8 = 6271.93,
+   SolS1 = 51.91,
+   SolS2 = 103.83,
+   SolS3 = 207.65,
+   SolS4 = 415.30,
+   SolS5 = 830.61,
+   SolS6 = 1661.22,
+   SolS7 = 3322.44,
+   SolS8 = 6644.88,
 
    La1 = 55,
    La2 = 110,
@@ -62,6 +94,14 @@ export enum MusicalNoteFrecuency {
    La6 = 1760,
    La7 = 3520,
    La8 = 7040,
+   LaS1 = 58.27,
+   LaS2 = 116.54,
+   LaS3 = 233.08,
+   LaS4 = 466.16,
+   LaS5 = 932.33,
+   LaS6 = 1864.66,
+   LaS7 = 3729.31,
+   LaS8 = 7458.62,
 
    Si1 = 61.74,
    Si2 = 123.47,
@@ -70,8 +110,14 @@ export enum MusicalNoteFrecuency {
    Si5 = 987.77,
    Si6 = 1975.53,
    Si7 = 3951.07,
-   Si8 = 7902.13
-
+   Si8 = 7902.13,
+   SiS1 = 65.41,
+   SiS2 = 130.81,
+   SiS3 = 261.63,
+   SiS4 = 523.25,
+   SiS5 = 1046.50,
+   SiS6 = 2093.00,
+   SiS7 = 4186.01
 }
 
 export default MusicalNoteFrecuency;
