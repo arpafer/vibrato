@@ -1,7 +1,5 @@
 import Note from "./note";
 
-export default interface NotePlay {
-   noteName: string;
+export default interface NotePlay extends Note {
    time: number;
-   frequency: number;
 }

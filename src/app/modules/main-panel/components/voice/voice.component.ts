@@ -71,6 +71,14 @@ export class VoiceComponent implements OnInit, OnChanges {
     // this.frequencies.splice(MapNotesNameToIndex.)
   }
 
+  changedTime(note: NotePlay, index: number) {
+    this.voiceService.updateNote(note, parseInt(this.voice), index);
+  }
+
+  play() {
+    this.voiceService.play(parseInt(this.voice));
+  }
+
   ngOnChanges(changes: SimpleChanges): void {
       // console.log("OnChanges - Voz " + this.voice + " - Note " + this.noteAdded.name + " - octava " + this.noteAdded.octave);
      // console.log(changes);

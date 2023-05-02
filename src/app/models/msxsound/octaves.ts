@@ -123,12 +123,19 @@ class NotasOctave4 extends NotasOctave {
  constructor() {
    super();
    this.arrayNotes.set("Do", MusicalNoteFrecuency.Do4);
+   this.arrayNotes.set("Do+", MusicalNoteFrecuency.Dos4);
    this.arrayNotes.set("Re", MusicalNoteFrecuency.Re4);
+   this.arrayNotes.set("Re+", MusicalNoteFrecuency.Res4);
    this.arrayNotes.set("Mi", MusicalNoteFrecuency.Mi4);
+   this.arrayNotes.set("Mi+", MusicalNoteFrecuency.MiS4);
    this.arrayNotes.set("Fa", MusicalNoteFrecuency.Fa4);
+   this.arrayNotes.set("Fa+", MusicalNoteFrecuency.FaS4);
    this.arrayNotes.set("Sol", MusicalNoteFrecuency.Sol4);
+   this.arrayNotes.set("Sol+", MusicalNoteFrecuency.SolS4);
    this.arrayNotes.set("La", MusicalNoteFrecuency.La4);
+   this.arrayNotes.set("La+", MusicalNoteFrecuency.LaS4);
    this.arrayNotes.set("Si", MusicalNoteFrecuency.Si4);
+   this.arrayNotes.set("Si+", MusicalNoteFrecuency.SiS4);
  }
 }
 
@@ -144,12 +151,19 @@ class NotasOctave5 extends NotasOctave {
  constructor() {
    super();
    this.arrayNotes.set("Do", MusicalNoteFrecuency.Do5);
+   this.arrayNotes.set("Do+", MusicalNoteFrecuency.Dos5);
    this.arrayNotes.set("Re", MusicalNoteFrecuency.Re5);
+   this.arrayNotes.set("Re+", MusicalNoteFrecuency.Res5);
    this.arrayNotes.set("Mi", MusicalNoteFrecuency.Mi5);
+   this.arrayNotes.set("Mi+", MusicalNoteFrecuency.MiS5);
    this.arrayNotes.set("Fa", MusicalNoteFrecuency.Fa5);
+   this.arrayNotes.set("Fa+", MusicalNoteFrecuency.FaS5);
    this.arrayNotes.set("Sol", MusicalNoteFrecuency.Sol5);
+   this.arrayNotes.set("Sol+", MusicalNoteFrecuency.SolS5);
    this.arrayNotes.set("La", MusicalNoteFrecuency.La5);
+   this.arrayNotes.set("La+", MusicalNoteFrecuency.LaS5);
    this.arrayNotes.set("Si", MusicalNoteFrecuency.Si5);
+   this.arrayNotes.set("Si+", MusicalNoteFrecuency.SiS5);
  }
 }
 
@@ -165,12 +179,19 @@ class NotasOctave6 extends NotasOctave {
  constructor() {
    super();
    this.arrayNotes.set("Do", MusicalNoteFrecuency.Do6);
+   this.arrayNotes.set("Do+", MusicalNoteFrecuency.Dos6);
    this.arrayNotes.set("Re", MusicalNoteFrecuency.Re6);
+   this.arrayNotes.set("Re+", MusicalNoteFrecuency.Res6);
    this.arrayNotes.set("Mi", MusicalNoteFrecuency.Mi6);
+   this.arrayNotes.set("Mi+", MusicalNoteFrecuency.MiS6);
    this.arrayNotes.set("Fa", MusicalNoteFrecuency.Fa6);
+   this.arrayNotes.set("Fa+", MusicalNoteFrecuency.FaS6);
    this.arrayNotes.set("Sol", MusicalNoteFrecuency.Sol6);
+   this.arrayNotes.set("Sol+", MusicalNoteFrecuency.SolS6);
    this.arrayNotes.set("La", MusicalNoteFrecuency.La6);
+   this.arrayNotes.set("La+", MusicalNoteFrecuency.LaS6);
    this.arrayNotes.set("Si", MusicalNoteFrecuency.Si6);
+   this.arrayNotes.set("Si+", MusicalNoteFrecuency.SiS6);
  }
 }
 
@@ -186,12 +207,19 @@ class NotasOctave7 extends NotasOctave {
  constructor() {
    super();
    this.arrayNotes.set("Do", MusicalNoteFrecuency.Do7);
+   this.arrayNotes.set("Do+", MusicalNoteFrecuency.Dos7);
    this.arrayNotes.set("Re", MusicalNoteFrecuency.Re7);
+   this.arrayNotes.set("Re+", MusicalNoteFrecuency.Res7);
    this.arrayNotes.set("Mi", MusicalNoteFrecuency.Mi7);
+   this.arrayNotes.set("Mi+", MusicalNoteFrecuency.MiS7);
    this.arrayNotes.set("Fa", MusicalNoteFrecuency.Fa7);
+   this.arrayNotes.set("Fa+", MusicalNoteFrecuency.FaS7);
    this.arrayNotes.set("Sol", MusicalNoteFrecuency.Sol7);
+   this.arrayNotes.set("Sol+", MusicalNoteFrecuency.SolS7);
    this.arrayNotes.set("La", MusicalNoteFrecuency.La7);
+   this.arrayNotes.set("La+", MusicalNoteFrecuency.LaS7);
    this.arrayNotes.set("Si", MusicalNoteFrecuency.Si7);
+   this.arrayNotes.set("Si+", MusicalNoteFrecuency.SiS7);
  }
 }
 
@@ -207,11 +235,17 @@ class NotasOctave8 extends NotasOctave {
  constructor() {
    super();
    this.arrayNotes.set("Do", MusicalNoteFrecuency.Do8);
+   this.arrayNotes.set("Do+", MusicalNoteFrecuency.Dos8);
    this.arrayNotes.set("Re", MusicalNoteFrecuency.Re8);
+   this.arrayNotes.set("Re+", MusicalNoteFrecuency.Res8);
    this.arrayNotes.set("Mi", MusicalNoteFrecuency.Mi8);
+   this.arrayNotes.set("Mi+", MusicalNoteFrecuency.MiS8);
    this.arrayNotes.set("Fa", MusicalNoteFrecuency.Fa8);
+   this.arrayNotes.set("Fa+", MusicalNoteFrecuency.FaS8);
    this.arrayNotes.set("Sol", MusicalNoteFrecuency.Sol8);
+   this.arrayNotes.set("Sol+", MusicalNoteFrecuency.SolS8);
    this.arrayNotes.set("La", MusicalNoteFrecuency.La8);
+   this.arrayNotes.set("La+", MusicalNoteFrecuency.LaS8);
    this.arrayNotes.set("Si", MusicalNoteFrecuency.Si8);
  }
 }

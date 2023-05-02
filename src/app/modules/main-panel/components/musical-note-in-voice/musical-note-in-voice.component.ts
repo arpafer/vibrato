@@ -18,6 +18,7 @@ export class MusicalNoteInVoiceComponent implements OnInit {
   @Input() disabledClick: boolean = false;
   @Output() clickedNote = new EventEmitter<NotePlay>();
   @Output() erasedNote = new EventEmitter<NotePlay>();
+  @Output() changedTime = new EventEmitter<NotePlay>();
 
   btnWidth: string = "";
   private minWidth:number = 47;
@@ -34,6 +35,7 @@ export class MusicalNoteInVoiceComponent implements OnInit {
      if (this.minTime >= 0.1) {
        this.minTime -= 0.1;
        this.minTime = Number(this.minTime.toFixed(1));
+       this.changedTime.emit({name: this.noteName, time: this.minTime, frequency: this.noteFrequency, octave: 0});
      }
      console.log("Volume: ", this.minTime, " Nota: ", this.noteName, " Frecuencia: " + this.noteFrequency);
   }
@@ -42,13 +44,14 @@ export class MusicalNoteInVoiceComponent implements OnInit {
      this.minTime += 0.1;
      this.minTime = Number(this.minTime.toFixed(2));
      console.log("Volume: ", this.minTime, " Nota: ", this.noteName, " Frecuencia: ", this.noteFrequency);
+     this.changedTime.emit({name: this.noteName, time: this.minTime, frequency: this.noteFrequency, octave: 0});
   }
 
   _clickedNote() {
-     this.clickedNote.emit({noteName: this.noteName, time: this.minTime, frequency: this.noteFrequency});
+     this.clickedNote.emit({name: this.noteName, time: this.minTime, frequency: this.noteFrequency, octave: 0});
   }
 
   deleteNote() {
-     this.erasedNote.emit({noteName: this.noteName, time: this.minTime, frequency: this.noteFrequency});
+     this.erasedNote.emit({name: this.noteName, time: this.minTime, frequency: this.noteFrequency, octave: 0});
   }
 }
