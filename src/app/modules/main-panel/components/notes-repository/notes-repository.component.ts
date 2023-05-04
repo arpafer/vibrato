@@ -15,7 +15,6 @@ export class NotesRepositoryComponent implements OnInit {
     console.log(this.octaves.length);
   }
 
-
   ngOnInit(): void {
   }
 

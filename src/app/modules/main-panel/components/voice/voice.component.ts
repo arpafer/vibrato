@@ -63,7 +63,7 @@ export class VoiceComponent implements OnInit, OnChanges {
 
   clickedNote(note: NotePlay) {
     console.log(note);
-    this.noteService.play(parseInt(this.voice), note);
+    this.noteService.play(parseInt(this.voice), [note]);
   }
 
   erasedNote(note: NotePlay, index: number) {

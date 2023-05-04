@@ -34,8 +34,12 @@ export class VoiceService {
       notesVoice.forEach(
         (_note) => {
            if (_note.name == note.name && _note.frequency == note.frequency && i == index && !encontrado) {
-              _note = note;
+              notesVoice[i] = note;
+              encontrado = true;
+              this.mapNotesPerVoice.set(voice, notesVoice);
            }
+           i++;
+           if (encontrado) return;
           }
       );
     }
@@ -46,7 +50,7 @@ export class VoiceService {
   }
 
   removeNote(note: NotePlay, voice: number, indexPosition: number): void {
-    let notesVoice: Note[] = this.mapNotesPerVoice.get(voice)?? [];
+    let notesVoice: NotePlay[] = this.mapNotesPerVoice.get(voice)?? [];
     if (notesVoice.length > 0) {
       let encontrado = false;
       let i = 0;
@@ -55,6 +59,7 @@ export class VoiceService {
            if (_note.name == note.name && _note.frequency == note.frequency && i == indexPosition && !encontrado) {
             notesVoice.splice(indexPosition, 1);
             encontrado = true;
+            this.mapNotesPerVoice.set(voice, notesVoice);
             this.voice$.next({notes: notesVoice, voice: voice, volume: 0});
            }
            i++;
@@ -67,11 +72,13 @@ export class VoiceService {
   play(voice: number): void {
     let notesVoice: NotePlay[] = this.mapNotesPerVoice.get(voice)?? [];
     if (notesVoice.length > 0) {
+      let lstNotes: NotePlay[] = [];
       notesVoice.forEach(
         (note: NotePlay) => {
-          this.noteService.play(voice, { name: note.name, time: note.time, frequency: note.frequency, octave: note.octave})
+          lstNotes.push({ name: note.name, time: note.time, frequency: note.frequency, octave: note.octave});
         }
-      )
+      );
+      this.noteService.play(voice, lstNotes)
     }
   }
 

@@ -12,7 +12,7 @@ export class NoteService {
 
   constructor() { }
 
-  play(voice: number, note: NotePlay): void {
+  play(voice: number, notes: NotePlay[]): void {
 
     //console.log(note);
     let sound = new SoundChip();
@@ -21,7 +21,14 @@ export class NoteService {
          // NoteInVoice  --> Hay que meter este nuevo Interface, que es lo que se va a devolver al observador.
       }
     );
-    sound.setVoiceFrequencies(voice, [note.frequency, note.time]);
+    let frecuencias: number[] = [];
+    notes.forEach(
+      (note) => {
+        frecuencias.push(note.frequency, note.time);
+        console.log("note name: " + note.name + " frecuencia: " + note.frequency + " time: " + note.time);
+      }
+    )
+    sound.setVoiceFrequencies(voice, frecuencias);
     sound.play();
   }
 

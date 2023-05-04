@@ -1,5 +1,5 @@
 export enum MusicalNoteFrecuency {
-   NS = 0,
+   NS = 0.0,
    Do1 = 32.70,  // C
    Do2 = 65.41,
    Do3 = 130.81,
@@ -46,7 +46,7 @@ export enum MusicalNoteFrecuency {
    MiS1 = 46.25,
    MiS2 = 92.50,
    MiS3 = 185.00,
-   MiS4 = 370.00,
+   MiS4 = 349.23,
    MiS5 = 698.46,
    MiS6 = 1480.00,
    MiS7 = 2960.00,

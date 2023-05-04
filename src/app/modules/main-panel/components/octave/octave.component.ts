@@ -16,7 +16,7 @@ export class OctaveComponent implements OnInit {
   public notesName: string[] = [];
   public notesFrequencies: number[] = [];
   public coloresNotas: string[] = [
-    "#FFA500", "#FFD700", "#9ACD32", "#008000", "#1E90FF", "#4B0082", "#DA70D6"
+    "#EEEEEE", "#FFA500", "#FFD700", "#9ACD32", "#008000", "#1E90FF", "#4B0082", "#DA70D6"
   ];
 
   constructor(private octaveService: OctaveService, private noteService: NoteService) {
@@ -42,6 +42,6 @@ export class OctaveComponent implements OnInit {
   playNote(noteName: string): void {
      this.octave = Octaves.octaves[this.octaveIndex - 1];
      let frequency: number = this.octave.notas.arrayNotes.get(noteName) as number;
-     this.noteService.play(1, { name: noteName, time: 0.25, frequency: frequency, octave: 0 })
+     this.noteService.play(1, [{ name: noteName, time: 0.25, frequency: frequency, octave: 0 }]);
   }
 }

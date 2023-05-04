@@ -19,6 +19,7 @@ class NotasOctave1 extends NotasOctave {
 
   constructor() {
     super();
+    this.arrayNotes.set("NS", MusicalNoteFrecuency.NS);
     this.arrayNotes.set("Do", MusicalNoteFrecuency.Do1);
     this.arrayNotes.set("DoS", MusicalNoteFrecuency.Dos1);
     this.arrayNotes.set("Re", MusicalNoteFrecuency.Re1);
@@ -57,7 +58,8 @@ class NotasOctave2 extends NotasOctave {
 
   constructor() {
     super();
-    this.arrayNotes.set("D", MusicalNoteFrecuency.Do2);
+    this.arrayNotes.set("NS", MusicalNoteFrecuency.NS);
+    this.arrayNotes.set("Do", MusicalNoteFrecuency.Do2);
     this.arrayNotes.set("Do+", MusicalNoteFrecuency.Dos2);
     this.arrayNotes.set("Re", MusicalNoteFrecuency.Re2);
     this.arrayNotes.set("Re+", MusicalNoteFrecuency.Res2);
@@ -94,6 +96,7 @@ class NotasOctave3 extends NotasOctave {
 
   constructor() {
     super();
+    this.arrayNotes.set("NS", MusicalNoteFrecuency.NS);
     this.arrayNotes.set("Do", MusicalNoteFrecuency.Do3);
     this.arrayNotes.set("Do+", MusicalNoteFrecuency.Dos3);
     this.arrayNotes.set("Re", MusicalNoteFrecuency.Re3);
@@ -122,6 +125,7 @@ class NotasOctave4 extends NotasOctave {
 
  constructor() {
    super();
+   this.arrayNotes.set("NS", MusicalNoteFrecuency.NS);
    this.arrayNotes.set("Do", MusicalNoteFrecuency.Do4);
    this.arrayNotes.set("Do+", MusicalNoteFrecuency.Dos4);
    this.arrayNotes.set("Re", MusicalNoteFrecuency.Re4);
@@ -150,6 +154,7 @@ class NotasOctave5 extends NotasOctave {
 
  constructor() {
    super();
+   this.arrayNotes.set("NS", MusicalNoteFrecuency.NS);
    this.arrayNotes.set("Do", MusicalNoteFrecuency.Do5);
    this.arrayNotes.set("Do+", MusicalNoteFrecuency.Dos5);
    this.arrayNotes.set("Re", MusicalNoteFrecuency.Re5);
@@ -178,6 +183,7 @@ class NotasOctave6 extends NotasOctave {
 
  constructor() {
    super();
+   this.arrayNotes.set("NS", MusicalNoteFrecuency.NS);
    this.arrayNotes.set("Do", MusicalNoteFrecuency.Do6);
    this.arrayNotes.set("Do+", MusicalNoteFrecuency.Dos6);
    this.arrayNotes.set("Re", MusicalNoteFrecuency.Re6);
@@ -206,6 +212,7 @@ class NotasOctave7 extends NotasOctave {
 
  constructor() {
    super();
+   this.arrayNotes.set("NS", MusicalNoteFrecuency.NS);
    this.arrayNotes.set("Do", MusicalNoteFrecuency.Do7);
    this.arrayNotes.set("Do+", MusicalNoteFrecuency.Dos7);
    this.arrayNotes.set("Re", MusicalNoteFrecuency.Re7);
@@ -234,6 +241,7 @@ class NotasOctave8 extends NotasOctave {
 
  constructor() {
    super();
+   this.arrayNotes.set("NS", MusicalNoteFrecuency.NS);
    this.arrayNotes.set("Do", MusicalNoteFrecuency.Do8);
    this.arrayNotes.set("Do+", MusicalNoteFrecuency.Dos8);
    this.arrayNotes.set("Re", MusicalNoteFrecuency.Re8);
@@ -251,8 +259,7 @@ class NotasOctave8 extends NotasOctave {
 }
 
 export class Octaves {
-  static octaves = [new Octave1(), new Octave2(), new Octave3(), new Octave4(), new Octave5(), new Octave6(), new Octave7(), new Octave8()]
-
+  static octaves = [new Octave1(), new Octave2(), new Octave3(), new Octave4(), new Octave5(), new Octave6(), new Octave7(), new Octave8()];
 }
 
 export default Octaves;

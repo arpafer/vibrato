@@ -28,4 +28,8 @@ export class MelodyControlComponent implements OnInit {
       }
     )
   }
+
+  clickPlay() {
+    
+  }
 }
