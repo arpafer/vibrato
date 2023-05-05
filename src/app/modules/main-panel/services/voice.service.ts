@@ -71,18 +71,24 @@ export class VoiceService {
 
   play(voice: number): void {
     let notesVoice: NotePlay[] = this.mapNotesPerVoice.get(voice)?? [];
-    if (notesVoice.length > 0) {
+   /* if (notesVoice.length > 0) {
       let lstNotes: NotePlay[] = [];
       notesVoice.forEach(
         (note: NotePlay) => {
           lstNotes.push({ name: note.name, time: note.time, frequency: note.frequency, octave: note.octave});
         }
       );
-      this.noteService.play(voice, lstNotes)
-    }
+      this.noteService.play(voice, lstNotes) */
+      this.noteService.play(voice, notesVoice);
+    
   }
 
-  stop(): void {
+  getNotesPerVoice(voice: number): NotePlay[] {
+    let notesVoice: NotePlay[] = this.mapNotesPerVoice.get(voice)?? [];
+    return notesVoice;
+  }
+
+  stop(voice: number): void {
 
   }
 

@@ -13,19 +13,19 @@
 <div class="border-control-melodia separacion-panel-voces">
   <div class="row">
     <div class="col">
-      <app-voice voice="1" [activated]=true [noteAdded]="this.note"></app-voice>
+      <app-voice voice="1" [activated]=true [noteAdded]="this.note" [globalPlay]=this.playing></app-voice>
     </div>
   </div>
   <br>
   <div class="row">
     <div class="col">
-      <app-voice voice="2" [noteAdded]="this.note"></app-voice>
+      <app-voice voice="2" [noteAdded]="this.note" [globalPlay]=this.playing></app-voice>
     </div>
   </div>
   <br>
   <div class="row">
     <div class="col">
-      <app-voice voice="3" [noteAdded]="this.note"></app-voice>
+      <app-voice voice="3" [noteAdded]="this.note" [globalPlay]=this.playing></app-voice>
     </div>
   </div>
 </div>

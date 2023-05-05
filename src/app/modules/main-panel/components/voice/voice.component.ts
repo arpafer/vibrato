@@ -16,9 +16,10 @@ export class VoiceComponent implements OnInit, OnChanges {
 
   @Input() voice: string = "";
   @Input() noteAdded: Note = {name: "", octave: 0, frequency: 0};
-  @Output() noteRemoved = new EventEmitter<Note>();
   @Input() activated: boolean = false;
-
+  @Input() globalPlay: boolean = false;
+  @Output() noteRemoved = new EventEmitter<Note>();
+ 
   private notes$ = new Observable<NotesInVoice>();
   private notesSubscription = new Subscription();
   public notes: Note[] = [];
@@ -82,8 +83,18 @@ export class VoiceComponent implements OnInit, OnChanges {
   ngOnChanges(changes: SimpleChanges): void {
       // console.log("OnChanges - Voz " + this.voice + " - Note " + this.noteAdded.name + " - octava " + this.noteAdded.octave);
      // console.log(changes);
-      if (this.activated) {
-        this.voiceService.addNote(this.noteAdded, parseInt(this.voice), this.volume);
+     const _noteAdded = changes["noteAdded"];
+      if (this.activated && _noteAdded != null) {       
+        if (_noteAdded.currentValue != _noteAdded.previousValue) {
+           this.voiceService.addNote(this.noteAdded, parseInt(this.voice), this.volume);
+        } 
+      }
+      const _globalPlay = changes["globalPlay"];
+      if (_globalPlay != null && _globalPlay.currentValue != _globalPlay.previousValue) {
+        if (_globalPlay.currentValue == true)
+           this.voiceService.play(parseInt(this.voice));
+        else 
+           this.voiceService.stop(parseInt(this.voice));
       }
   }
 
