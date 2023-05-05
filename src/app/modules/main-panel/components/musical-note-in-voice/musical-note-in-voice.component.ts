@@ -19,6 +19,8 @@ export class MusicalNoteInVoiceComponent implements OnInit {
   @Output() clickedNote = new EventEmitter<NotePlay>();
   @Output() erasedNote = new EventEmitter<NotePlay>();
   @Output() changedTime = new EventEmitter<NotePlay>();
+  @Output() offsetLeft = new EventEmitter<boolean>();
+  @Output() offsetRight = new EventEmitter<boolean>();
 
   btnWidth: string = "";
   private minWidth:number = 47;
@@ -53,5 +55,13 @@ export class MusicalNoteInVoiceComponent implements OnInit {
 
   deleteNote() {
      this.erasedNote.emit({name: this.noteName, time: this.minTime, frequency: this.noteFrequency, octave: 0});
+  }
+
+  clickOffsetLeft() {
+     this.offsetLeft.emit(true);
+  }
+
+  clickOffsetRight() {
+    this.offsetRight.emit(true);
   }
 }

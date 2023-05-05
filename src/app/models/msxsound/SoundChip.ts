@@ -100,9 +100,9 @@ class SoundChip {
 
     public play(duration: number = 1) {
         // Iniciar la reproducción de los osciladores
-       this.voice1.start();
-       this.voice2.start();
-       this.voice3.start();
+         this.voice1.start();
+         this.voice2.start();
+         this.voice3.start();
     }
 
    }

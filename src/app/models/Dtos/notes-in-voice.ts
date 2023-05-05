@@ -1,7 +1,7 @@
-import Note from "./note";
+import NotePlay from "./note-play";
 
 export interface NotesInVoice {
-   notes: Note[];
+   notes: NotePlay[];
    voice: number;
    volume: number;
 }

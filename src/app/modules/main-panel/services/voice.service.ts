@@ -13,7 +13,6 @@ export class VoiceService {
 
   private mapNotesPerVoice: Map<number, NotePlay[]> = new Map<number, NotePlay[]>();
   private voice$ = new Subject<NotesInVoice>();
-  private notePlaying$ = new Subject<NotePlay>();
 
   constructor(private noteService: NoteService) {
 
@@ -23,7 +22,7 @@ export class VoiceService {
     let notesVoice: NotePlay[] = this.mapNotesPerVoice.get(voice)?? [];
     notesVoice.push({ name: note.name, frequency: note.frequency, octave: note.octave, time: 0.5});
     this.mapNotesPerVoice.set(voice, notesVoice);
-    this.voice$.next({notes: notesVoice, voice: voice, volume});
+    this.voice$.next({notes: notesVoice, voice: voice, volume: volume});
   }
 
   updateNote(note: NotePlay, voice: number, index: number) {
@@ -80,7 +79,7 @@ export class VoiceService {
       );
       this.noteService.play(voice, lstNotes) */
       this.noteService.play(voice, notesVoice);
-    
+
   }
 
   getNotesPerVoice(voice: number): NotePlay[] {

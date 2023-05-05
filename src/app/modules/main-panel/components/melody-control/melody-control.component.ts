@@ -14,7 +14,6 @@ export class MelodyControlComponent implements OnInit {
 
   private noteObservable$ = new Observable<Note>();
   public note: Note = { name: "", octave: 0, frequency: 0};
-  public playing: boolean = false;
 
   constructor(private octaveService: OctaveService, private noteService: NoteService, private voiceService: VoiceService) { }
 
@@ -34,8 +33,8 @@ export class MelodyControlComponent implements OnInit {
 
   clickPlay() {
    // this.playing = !this.playing;
-    this.noteService.playAll(this.voiceService.getNotesPerVoice(1), 
-          this.voiceService.getNotesPerVoice(2), 
+    this.noteService.playAll(this.voiceService.getNotesPerVoice(1),
+          this.voiceService.getNotesPerVoice(2),
           this.voiceService.getNotesPerVoice(3));
   }
 }
