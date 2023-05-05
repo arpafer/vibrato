@@ -14,7 +14,7 @@ export class MusicalNoteInVoiceComponent implements OnInit {
   @Input() width: number = 50;
   @Input() fontSize: string = "small";
   @Input() resaltado: boolean = false;
-  @Input() timeButton: boolean = false;
+  @Input() minTime: number = 0.5;
   @Input() disabledClick: boolean = false;
   @Output() clickedNote = new EventEmitter<NotePlay>();
   @Output() erasedNote = new EventEmitter<NotePlay>();
@@ -24,7 +24,6 @@ export class MusicalNoteInVoiceComponent implements OnInit {
 
   btnWidth: string = "";
   private minWidth:number = 47;
-  public minTime: number = 0.5;
   public pointer: string = "pointer";
 
   constructor() { }
