@@ -1,5 +1,5 @@
-<button type="button" class="btn btn-primary position-relative {{this.color}} {{this.pointer}}"
-  [ngStyle]="{'max-width': width, 'min-width': width}" (click)="clickNote()">
+<button type="button" class="btn btn-primary position-relative {{this.color}} {{this.pointer}} {{this.sizeClass}}"
+   (click)="clickNote()">
   <b><span [ngStyle]="{'font-size': fontSize}">{{ noteName }}</span></b>
   <span class="position-absolute top-0 start-50 translate-middle badge rounded-pill bg-danger">
     <small>{{ this.noteFrequency }}</small>

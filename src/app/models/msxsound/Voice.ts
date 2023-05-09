@@ -10,6 +10,7 @@ export default class Voice {
     private volume: number;
     private type: VoiceType;
     private playedNote$ = new Subject<Frecuency>();
+    private playingNote$ = new Subject<Frecuency>();
 
     constructor(audioContext: AudioContext, volume: number = 0.5, type: VoiceType = VoiceType.SINE) {
         this.audioContext = audioContext;
@@ -23,6 +24,10 @@ export default class Voice {
 
     getPlayedNote$(): Observable<Frecuency> {
        return this.playedNote$.asObservable();
+    }
+
+    getPlayingNote$(): Observable<Frecuency> {
+        return this.playingNote$.asObservable();
     }
 
     private createOscillator() {
@@ -55,6 +60,7 @@ export default class Voice {
             this.createOscillator();
             let frequency: Frecuency = this.frecuencies[freqIndex];
             this.voice.frequency.value = frequency.value;
+            this.playingNote$.next(frequency);
             this.voice.start();
             this.voice.stop(this.audioContext.currentTime + frequency.duration);
             this.voice.onended = () => {

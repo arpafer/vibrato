@@ -14,9 +14,15 @@ class SoundChip {
     private playedNoteVoice1$ = new Subject<Frecuency>();
     private playedNoteVoice2$ = new Subject<Frecuency>();
     private playedNoteVoice3$ = new Subject<Frecuency>();
+    private playingNoteVoice1$ = new Subject<Frecuency>();
+    private playingNoteVoice2$ = new Subject<Frecuency>();
+    private playingNoteVoice3$ = new Subject<Frecuency>();
     private playedNoteVoice1Observer$ = new Observable<Frecuency>();
     private playedNoteVoice2Observer$ = new Observable<Frecuency>();
     private playedNoteVoice3Observer$ = new Observable<Frecuency>();
+    private playingNoteVoice1Observer$ = new Observable<Frecuency>();
+    private playingNoteVoice2Observer$ = new Observable<Frecuency>();
+    private playingNoteVoice3Observer$ = new Observable<Frecuency>();
 
     constructor() {
         this.audioContext = new AudioContext();
@@ -27,11 +33,26 @@ class SoundChip {
         this.playedNoteVoice1Observer$ = this.voice1.getPlayedNote$();
         this.playedNoteVoice2Observer$ = this.voice2.getPlayedNote$();
         this.playedNoteVoice3Observer$ = this.voice3.getPlayedNote$();
+        this.playingNoteVoice1Observer$ = this.voice1.getPlayingNote$();
+        this.playingNoteVoice2Observer$ = this.voice2.getPlayingNote$();
+        this.playingNoteVoice3Observer$ = this.voice3.getPlayingNote$();
 
+        this.observerPlayingNoteVoice1();
+        this.observerPlayingNoteVoice2();
+        this.observerPlayingNoteVoice3();
         this.observerPlayedNoteVoice1();
         this.observerPlayedNoteVoice2();
         this.observerPlayedNoteVoice3();
     }
+
+   getObserverPlayingNoteVoice$(voice: number): Observable<Frecuency> {
+    if (voice == 1) {
+      return this.playingNoteVoice1$.asObservable();
+    } else if (voice == 2) {
+      return this.playingNoteVoice1$.asObservable();
+    }
+    return this.playingNoteVoice1$.asObservable();
+   }
 
     getObserverPlayedNoteVoice$(voice: number): Observable<Frecuency> {
       if (voice == 1) {
@@ -42,7 +63,31 @@ class SoundChip {
       return this.playedNoteVoice3$.asObservable();
     }
 
-    observerPlayedNoteVoice1() {
+    observerPlayingNoteVoice1() {
+       this.playingNoteVoice1Observer$.subscribe(
+        (frequency: Frecuency) => {
+          this.playingNoteVoice1$.next(frequency);
+        }
+       )
+    }   
+
+    observerPlayingNoteVoice2() {
+      this.playingNoteVoice2Observer$.subscribe(
+        (frequency: Frecuency) => {
+          this.playingNoteVoice2$.next(frequency);
+        }
+       )
+    }
+
+    observerPlayingNoteVoice3() {
+      this.playingNoteVoice3Observer$.subscribe(
+        (frequency: Frecuency) => {
+          this.playingNoteVoice3$.next(frequency);
+        }
+       )
+    }
+
+    private observerPlayedNoteVoice1() {
        this.playedNoteVoice1Observer$.subscribe(
         (frequency: Frecuency) => {
           this.playedNoteVoice1$.next(frequency);
@@ -50,7 +95,7 @@ class SoundChip {
        )
     }
 
-    observerPlayedNoteVoice2() {
+    private observerPlayedNoteVoice2() {
       this.playedNoteVoice2Observer$.subscribe(
         (frequency: Frecuency) => {
           this.playedNoteVoice2$.next(frequency);
@@ -58,7 +103,7 @@ class SoundChip {
        )
     }
 
-    observerPlayedNoteVoice3() {
+    private observerPlayedNoteVoice3() {
       this.playedNoteVoice3Observer$.subscribe(
         (frequency: Frecuency) => {
           this.playedNoteVoice3$.next(frequency);

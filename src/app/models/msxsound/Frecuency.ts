@@ -1,4 +1,5 @@
 export class Frecuency {
+    
     private _value: number;
     private _duration: number;
 
@@ -13,5 +14,13 @@ export class Frecuency {
 
     get duration(): number {
         return this._duration;
+    }
+
+    isEqualTo(freqPlayed: Frecuency): boolean {
+      return this._value == freqPlayed._value;
+    }
+
+    isValid() {
+      return this._value != 0 && this._duration != 0;
     }
 }

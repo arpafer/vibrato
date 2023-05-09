@@ -6,6 +6,7 @@ import { NotesInVoice } from 'src/app/models/Dtos/notes-in-voice';
 import Octaves from 'src/app/models/msxsound/Octaves';
 import NotePlay from '../../../../models/Dtos/note-play';
 import { NoteService } from '../../services/note.service';
+import { Frecuency } from 'src/app/models/msxsound/Frecuency';
 
 @Component({
   selector: 'app-voice',
@@ -21,6 +22,7 @@ export class VoiceComponent implements OnInit, OnChanges {
 
   private notes$ = new Observable<NotesInVoice>();
   private notesSubscription = new Subscription();
+  private notePlayedSubscription = new Subscription();
   public notes: NotePlay[] = [];
   public frequencies: number[] = [];
   public loading: boolean = false;
@@ -32,6 +34,7 @@ export class VoiceComponent implements OnInit, OnChanges {
 
     this.notes$ = this.voiceService.getNotes$();
     this.noteAddedObserver();
+    this.observerNotePlayed();
   }
 
   private noteAddedObserver() {
@@ -40,6 +43,14 @@ export class VoiceComponent implements OnInit, OnChanges {
         this.loadNotas(_notes);
         this.loading = false;
         console.log(this.notes);
+      }
+    )
+  }
+
+  private observerNotePlayed() {
+    this.notePlayedSubscription = this.noteService.getNotePlayed$().subscribe(
+      (freq: Frecuency) => {
+
       }
     )
   }

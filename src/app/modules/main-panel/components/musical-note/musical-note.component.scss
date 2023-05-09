@@ -1,11 +1,19 @@
-.width-note {
-  width: 47px;
+.size-note {
+  min-width: 47px;
+  min-height: 45px;
+  max-width: 47px;
+  max-height: 45px;
+  z-index: 1;
+ 
 }
 
-.note-playing {
-  width: 60px;
+.size-note-playing {
+  min-width: 60px;
+  min-height: 58px;
+  max-width: 60px;
+  max-height: 58px;
+  box-shadow: 7px 7px rgba(0, 0, 0, 0.4);
   z-index: 1000;
-  box-shadow: 5px 5px 0;
 }
 
 .color-Do {

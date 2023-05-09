@@ -2,7 +2,8 @@
   <div class="separacion-notas" *ngFor="let noteName of this.notesName; let i = index">
     <div class="row">
       <div class="col">
-        <app-musical-note [noteName]="noteName" [noteFrequency]="this.notesFrequencies[i]" color="color-{{noteName}}"
+        <app-musical-note [noteName]="noteName" [noteFrequency]="this.notesFrequencies[i]" 
+           color="color-{{noteName}}"
           [width]=47 (clickedNote)="eventSelectedNote($event)"></app-musical-note>
       </div>
       <div class="col">
