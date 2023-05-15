@@ -45,7 +45,7 @@ export class MusicalNoteComponent implements OnInit, OnDestroy {
     this.notePlaying$ = this.noteService.getNotePlaying$().subscribe(
        (freq: Frecuency) => {
         if (freq.isEqualTo(new Frecuency(this.noteFrequency, this.minTime))) {
-          console.log("NOTA SONANDO...")
+          console.log("NOTA SONANDO..." + this.noteFrequency)
           this.sizeClass = "size-note-playing";
           this.fontSize = "1.1em";
          }
@@ -55,9 +55,9 @@ export class MusicalNoteComponent implements OnInit, OnDestroy {
 
   private observerNotePlayed() {
     this.notePlayed$ = this.noteService.getNotePlayed$().subscribe(
-       (freq: Frecuency) => {       
+       (freq: Frecuency) => {
          if (freq.isEqualTo(new Frecuency(this.noteFrequency, this.minTime))) {
-          console.log("NOTA TOCADA")
+          console.log("NOTA TOCADA: " + this.noteFrequency);
           this.sizeClass = "size-note";
           this.fontSize = "small";
          }
@@ -69,7 +69,7 @@ export class MusicalNoteComponent implements OnInit, OnDestroy {
      return (soundTime * this.minWidth) / this.minTime;
   }
 
-  clickNote() {    
+  clickNote() {
     this.clickedNote.emit(this.noteName);
   }
 
